@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: draft.aux
+The style file: icml2012.bst
+Database file #1: literature.bib
+Warning--empty year in bnt
+You've used 15 entries,
+            2773 wiz_defined-function locations,
+            688 strings with 7002 characters,
+and the built_in function-call counts, 5394 in all, are:
+= -- 458
+> -- 212
+< -- 17
++ -- 79
+- -- 63
+* -- 343
+:= -- 835
+add.period$ -- 45
+call.type$ -- 15
+change.case$ -- 60
+chr.to.int$ -- 14
+cite$ -- 31
+duplicate$ -- 311
+empty$ -- 527
+format.name$ -- 82
+if$ -- 1147
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 19
+newline$ -- 83
+num.names$ -- 60
+pop$ -- 164
+preamble$ -- 1
+purify$ -- 51
+quote$ -- 0
+skip$ -- 222
+stack$ -- 0
+substring$ -- 130
+swap$ -- 40
+text.length$ -- 4
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 130
+warning$ -- 1
+while$ -- 53
+width$ -- 0
+write$ -- 194
+(There was 1 warning)

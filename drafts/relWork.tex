@@ -1,0 +1,53 @@
+\section{Related Work} 
+\label{sec:soa}
+
+%\cite{ElidanInferenceLess} This paper focuses on efficient parameter learning for missing values given a lower-bound to log-likelihood function.
+%\cite{Elidan2011} I dont have much impression on this paper, I checked it, it is about a variation of EM algorithm, so I guess it is not that important.
+%\cite{ElidanCopula} This is the paper for the CBN framework. It proposed the most important framework, but for structure learning, they have nothing special.
+%\cite{Friedman99} This paper proposed a constraint based structure learning but it has a preconfiguration of the maximal number of parents.
+ %\cite{pc_spirtes} This is the paper for the PC algorithm.  
+%\cite{heckerman95} This is a bible-like paper for BNs I guess.
+% The introduction of 
+Copula Bayesian networks  (CBNs), introduced by \cite{ElidanCopula}, are a new and powerful model into
+the domain of causal discovery. The main advantage of such an approach is the high flexibility to represent
+multivariate distribution by using a graph-structured Copula model.
+%introducing Copula functions in graphical model. 
+Preliminary work has already overcome some standard problems like
+% the problem of 
+efficient parameter learning of CBN for datasets with missing values \cite{ElidanInferenceLess}, where a lower bound for the log-likelihood function is proposed.
+%
+However, many of the algorithms to infer the structure or the parameters of BN rely on mechanisms that have
+already been used for genuine BNs induction, like the constraint based structure learning \cite{Friedman99}. %Such 
+%approaches have already been improved to, e.g., allow for any number of parents in the final model [INSERT REF].
+The two most common algorithms for the structure inference of CBNs are PC algorithm and bayesian information criterion (BIC) score based heuristic method.
+The first, PC algorithm \cite{pc_spirtes}, learns the network structure using a constraint based method.
+Starting from a completely connected graph, edges are removed if the corresponding 
+independences are given.
+This, of course, requires a large amount of conditional independence tests, i.e., for each subset of nodes in 
+the graph. 
+Second, 
+%And 
+the BIC score based heuristic method \cite{schwarz78} generates the network structure 
+in a greedy way, so the optimal structure is not guaranteed. %thus the search space i exponentially large.
+%
+Both PC and BIC score based heuristic 
+methods will estimate parameters based on their learned structure using any traditional estimator, like MLE or
+MAP.
+%
+In contrast, we suggest the use of the partial inverse correlation matrix theorem
+which largely reduces the amount of conditional independence tests so that the learning
+process is extremely fast. % than other traditional methods.
+Moreover, the parameter learning in our PICM-CBN algorithm does not require any explicit structure. %to be learned 
+% firstly, 
+Instead, the correlation matrix (as we assume Gaussian Copulas) from parameter learning can be  
+used further as the input for the structure learning mitigating the computational complexity.
+%
+% Therefore, we gain a speedup avoiding a big number of conditional 
+% independence tests. 
+Moreover, even with a large amount of missing observations, the estimated correlation 
+matrix for Gaussian Copula still results in a precise structure inference.
+% 
+% is still enough for a precise inference of structure. 
+% This differs impressively 
+% from other structure learning algorithms where significant statistics from data is required.
+

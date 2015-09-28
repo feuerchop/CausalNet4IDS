@@ -1,0 +1,22 @@
+\begin{algorithm}[H]
+\caption{\textsc{StructuralHammingDistance(SHD)}}
+\label{algor:shd}
+\textbf{Input: Two DAGs $\mathcal{G}_1^\prec$ and $\mathcal{G}_2^\prec$} \\
+\textbf{Output: $d$ the Hamming Distance}
+	\begin{algorithmic}[1]
+		\STATE $\mathcal{V} \leftarrow $The nodes set of $\mathcal{G}_1^\prec$\\
+		\algorithmiccomment{The nodes set should be identical for both DAGs.}
+		\IF{Only one node in $V$}
+			\STATE $d \leftarrow 0$
+		\ELSE
+			\STATE $\hat{\mathcal{G}}_1^\prec \leftarrow$ Remove node $W$ from $\mathcal{G}_1^\prec$\\
+			\STATE $\hat{\mathcal{G}}_2^\prec \leftarrow$ Remove node $W$ from $\mathcal{G}_2^\prec$\\
+			\STATE $\#ADD \leftarrow$ Number of edge additions performed on $W$\\
+			\STATE $\#REMOVE \leftarrow$ Number of edge deletions performed on $W$\\
+			\STATE $\#REVERT \leftarrow$ Number of edge reversions performed on $W$\\
+			\STATE $\mathit{OPTs} \leftarrow \#ADD + \#REMOVE + \#REVERT$\\
+			\STATE $d \leftarrow \mathit{OPTs} + SHD(\hat{\mathcal{G}}_1^\prec, \hat{\mathcal{G}}_2^\prec)$\\
+		\ENDIF
+		\RETURN $d$
+	\end{algorithmic}
+\end{algorithm}

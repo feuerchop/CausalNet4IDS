@@ -1,0 +1,43 @@
+Dynamic Copula Toolbox
+
+This is a freely available toolbox that can be used to estimate the following models:
+
+Copula - GARCH models
+Copula - Vine models
+
+For more information about the proper use of the toolbox consult the pdf file inside the toolbox.
+
+------------------------------------HOW TO USE THE TOOLBOX -----------------------------
+
+1. Two step copula models:
+
+First call modelspec(data) where data is a data set with heteroscedastic margins, to create the model specifications.
+For a two step copula model, at the first pop up menu item that asks "what do you want to setimate" choose: 
+"Fit a GARCH model to each series", to define the marginal models. The call the fitModel function
+ to estimate the marginal parameters. For the second step call again modelspec to define the copula parameters by choosing "copula"
+at the first pop up menu item and then call fitModel to get the estimates of the copula parameters. Be sure to imput as the second
+argument (data) the last output from the first call of fitModel (udata). That is because in order to estimate a copula you data
+should consist of uniform iid margins.
+
+
+2. One step copula models: 
+
+First call: spec=modelspec(data) where data is a data set with heteroscedastic margins, to create the model specifications.
+For an one step copula model choose: "Copula in one step", to define the model. The call the fitModel function to estimate the model parameters.
+If you use the naive guess for the starting values the procedure might take a lot of time. Thus first estimate the model in two steps
+and use that output (combined in a column vector of the form: [margin1;margin2;copula] where margin1 is the parameters of the first margin etc)
+as starting values for the two step procedure.
+
+3. Copula Vine
+
+If your data consists of iid uniform margin when modelspec is called define "Copula Vine". Else filter your data by choosing
+"Fit a GARCH model to each series", just as in the two step copula models and use the output udata as the input argument data
+for the copula vine. Note: the copula vine with bivariate t copulas in the cascade needs a lot of time to converge, that is why
+you should use good starting values. The choice "Copula Vine sequentially" should be used only to obtain starting values for 
+a copula vine. Run this prior to "Copula Vine" to obtain starting values.
+
+If all the above are too complicated send your model specifications to vogia@yahoo.com and I will send back the exact steps you should
+follow in order to estimate your model.
+
+
+

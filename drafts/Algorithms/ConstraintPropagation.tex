@@ -1,0 +1,24 @@
+\begin{algorithm}[H]
+\caption{\textsc{ConstraintPropagation}}
+\label{algor:consProp}
+\textbf{Input: a partially directed graph $\mathcal{G}^\prec$}\\
+\textbf{Output: a maximally oriented graph $\mathcal{G}^\prec$}\\\vspace{-4mm}
+	\begin{algorithmic}[1]
+		\WHILE{$\mathcal{G}^\prec$ is changed}
+					\IF{Edge($X$, $Y$) is undirected and $\exists$ directed path from $X$ to $Y$}
+						\STATE set $X\rightarrow Y$ \algorithmiccomment{preserve acyclicity}\\  
+						\STATE break	
+					\ENDIF					
+				\IF{$\exists$ node $X$ where $Y\rightarrow X\leftrightarrow Z$} 					
+					\STATE set $Y\rightarrow X\rightarrow Z$ \algorithmiccomment{no new collider}\\ 
+					\STATE break					
+				\ENDIF		
+					
+				\IF{$\exists$ an undirected edge $X\leftrightarrow Y$ and \hfill\\ $\exists \text{ nonadjacent } Z \text{ and }W$ that $X\leftrightarrow Z\rightarrow Y$ and $X\leftrightarrow W\rightarrow Y$} 					
+					\STATE orient as $X\rightarrow Y$ \algorithmiccomment{three-fork structure}\\
+					\STATE break  	
+				\ENDIF
+		\ENDWHILE	
+	%	\RETURN $\mathcal{G}^\prec$
+	\end{algorithmic}
+\end{algorithm}

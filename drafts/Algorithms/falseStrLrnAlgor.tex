@@ -1,0 +1,20 @@
+\begin{algorithm}[H]
+\caption{\textsc{Cbn Structure Learning}}
+\label{algor:falseStrLrn}
+\textbf{Input: A set of nodes $\mathcal{X}$, $\Theta_C$, a threshold $\delta$} \\
+\textbf{Output: A directed graph $\mathcal{G}$ with nodes $\mathcal{X}$}
+	\begin{algorithmic}
+		\FOR{each node $X_i$ IN $\mathcal{X}$}
+			\FOR{other node $X_j | X_j\neq X_i$ AND $X_j$ NOT IN \textbf{Pa}($X_i$)}
+				\STATE $f(X_i|X_j) \leftarrow R_{C_i}(F(X_i), F(X_j))f(X_i)$ \\
+				\COMMENT{$R_{C_i}$ is the local copula ratio for $X_i$}
+				\STATE $d \leftarrow Distance(f(X_i|X_j), f(X_i))$ \\
+				\COMMENT{Here $d$ is a distance metric value of two distributions}
+				\IF{$d > \delta$ }	
+					\STATE \textbf{Pa}($X_i$) $\leftarrow X_j$		
+				\ENDIF
+			\ENDFOR		
+		\ENDFOR
+		\RETURN $\mathcal{G}$
+	\end{algorithmic}
+\end{algorithm}

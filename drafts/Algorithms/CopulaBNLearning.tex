@@ -1,0 +1,22 @@
+\begin{algorithm}[H]
+\caption{\textsc{PICM-CBN Learning}}
+\label{algor:copbn}
+\textbf{Input: Dataset $D$, threshold $\sigma$} \\
+\textbf{Output: All equivalent \textsc{DAGs}}\\\vspace{-4mm}
+	\begin{algorithmic}[1]
+		\STATE construct fully connected graph $\mathcal{G}$\\
+		\STATE $marginals \leftarrow$ estimate marginals for each variable\\
+		\STATE $\Sigma \leftarrow$ parameter estimation of Gaussian Copula\\
+		\STATE $\Sigma^{-1} \leftarrow$ inverse correlation matrix $\Sigma$\\
+		\FOR{each entry $e=\Sigma^{-1}_{ij}$}
+			\IF{$e < \sigma$}
+				\STATE remove $edge\left(i, j\right)$ from $\mathcal{G}$\\
+			\ENDIF	
+		\ENDFOR
+		\STATE set Moral graph $\hat{\mathcal{G}} \leftarrow \mathcal{G}$\\	
+		\STATE $\mathcal{G}^\prec \leftarrow $ DetriangulateMoralGraph($\hat{\mathcal{G}}, \Sigma, \sigma$)\\
+		\STATE $\mathcal{G}^\prec \leftarrow $ ConstraintPropagation($\mathcal{G}^\prec$)\\
+		\STATE \textsc{DAGs} $\leftarrow$ get equivalent graphs of $\mathcal{G}^\prec$\\
+		\STATE return \textsc{DAGs}
+	\end{algorithmic}
+\end{algorithm}

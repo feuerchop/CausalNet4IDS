@@ -1,0 +1,28 @@
+\begin{algorithm}[H]
+\caption{\textsc{EquivalentClasses}}
+\label{algor:equivClass}
+\textbf{Input: A maximally oriented directed graph $\mathcal{G}^\prec$} \\
+\textbf{Output: All equivalent directed graphs \textsc{DAGs}}\\\vspace{-4mm}
+	\begin{algorithmic}[1]
+		\WHILE{there are still undirected edges}
+			\STATE $\mathcal{G}_1^\prec \leftarrow \mathcal{G}^\prec$\\ 
+			\STATE $\mathcal{G}_2^\prec \rightarrow \mathcal{G}^\prec$\\
+			\STATE Randomly select $X\leftrightarrow Y$ from $\mathcal{G}^\prec$\\
+			\STATE set $X\rightarrow Y$ in $\mathcal{G}_1^\prec$\\
+			\STATE $\mathcal{G}_1^\prec \leftarrow$ ConstraintPropagation($\mathcal{G}_1^\prec$)\\
+			\IF{no more undirected edge in $\mathcal{G}_1^\prec$}
+				\STATE \textsc{DAGs} $\leftarrow \mathcal{G}_1^\prec$\\
+			\ELSE
+				\STATE \textsc{DAGs} $\leftarrow$ EquivalentClasses($\mathcal{G}_1^\prec$)\\
+			\ENDIF	
+			\STATE set $X\leftarrow Y$ in $\mathcal{G}_2^\prec$\\
+			\STATE $\mathcal{G}_2^\prec \leftarrow$ ConstraintPropagation($\mathcal{G}_2^\prec$)\\
+			\IF{no more undirected edge in $\mathcal{G}_2^\prec$}
+				\STATE \textsc{DAGs} $\leftarrow \mathcal{G}_2^\prec$\\
+			\ELSE
+				\STATE \textsc{DAGs} $\leftarrow$ EquivalentClasses($\mathcal{G}_2^\prec$)\\
+			\ENDIF
+		\ENDWHILE		
+		\STATE return \textsc{DAGs}
+	\end{algorithmic}
+\end{algorithm}

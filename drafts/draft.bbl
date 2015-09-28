@@ -1,0 +1,95 @@
+\begin{thebibliography}{15}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Acid(2003)]{AcidCampos}
+Acid, S.; de~Campos, L.~M.
+\newblock Searching for bayesian network structures in the space of restricted
+  acyclic partially directed graphs.
+\newblock \emph{Journal Of Artificial Intelligence Research}, 18:\penalty0
+  445--490, 2003.
+
+\bibitem[Elidan(2010{\natexlab{a}})]{ElidanCopula}
+Elidan, Gal.
+\newblock Copula bayesian networks.
+\newblock In \emph{The 24th Annual Conference on Neural Information Processing
+  Systems(NIPS)}, pp.\  559--567, 2010{\natexlab{a}}.
+
+\bibitem[Elidan(2010{\natexlab{b}})]{ElidanInferenceLess}
+Elidan, Gal.
+\newblock Inference-less density estimation using copula bayesian networks.
+\newblock \emph{Uncertainty in Artificial Intelligence (UAI)}, 26,
+  2010{\natexlab{b}}.
+
+\bibitem[Frank \& Asuncion(2010)Frank and Asuncion]{uciRepo}
+Frank, A. and Asuncion, A.
+\newblock {UCI} machine learning repository, 2010.
+\newblock URL \url{http://archive.ics.uci.edu/ml}.
+
+\bibitem[Friedman(1999)]{Friedman99}
+Friedman, Nir.
+\newblock {Learning Bayesian Network Structure from Massive Datasets: The
+  ''Sparse Candidate'' Algorithm}.
+\newblock In \emph{Proceedings of 15th Conference on Uncertainty in Artificial
+  Intelligence}, pp.\  206--215, 1999.
+
+\bibitem[Heckerman(1995)]{heckerman95}
+Heckerman, David.
+\newblock Tutorial on learning in bayesian networks.
+\newblock Technical Report MSR-TR-95-06, Microsoft, 1995.
+
+\bibitem[Korf(1993)]{Korf93}
+Korf, Richard~E.
+\newblock Linear-space best-first search.
+\newblock \emph{Artificial Intelligence}, 62\penalty0 (1):\penalty0 41--78,
+  July 1993.
+
+\bibitem[Murphy()]{bnt}
+Murphy, Kevin.
+\newblock Bayes net toolbox for matlab.
+\newblock URL \url{http://code.google.com/p/bnt/}.
+
+\bibitem[Nash \& Laboratories(1994)Nash and Laboratories]{abaloneBook}
+Nash, W.J. and Laboratories, Tasmania. Marine~Research.
+\newblock \emph{The Population biology of abalone (Haliotis species) in
+  Tasmania: Blacklip abalone (H. rubra) from the north coast and the islands of
+  Bass Strait}.
+\newblock Sea Fisheries Division, Dept. of Primary Industry and Fisheries,
+  Tasmania, 1994.
+
+\bibitem[Nelsen(2006)]{IntroCopluasBook}
+Nelsen, Roger~B.
+\newblock \emph{An Introduction to Copulas}.
+\newblock Springer Science+Business Media, Inc., 2006.
+
+\bibitem[Pearl(2000)]{bkCausalityPearl}
+Pearl, Judea.
+\newblock \emph{Causality: Models, Reasoning, and Inference}.
+\newblock Cambridge University Press, 2000.
+
+\bibitem[Sklar(1959)]{Sklar59}
+Sklar, A.
+\newblock \emph{Fonctions de repartition a n dimensions et leurs marges},
+  volume~8.
+\newblock Publications de l’Institut de Statistique de L’Universite de
+  Paris, 1959.
+
+\bibitem[Spirtes et~al.(2000)Spirtes, Glymour, and Scheines]{Spirtes2000}
+Spirtes, P., Glymour, C., and Scheines, R.
+\newblock \emph{Causation, Prediction, and Search}.
+\newblock The MIT Press, 2000.
+
+\bibitem[Spirtes et~al.(2001)Spirtes, Glymour, and Scheines]{pc_spirtes}
+Spirtes, Peter, Glymour, Clark, and Scheines, Richard.
+\newblock \emph{{Causation, Prediction, and Search}}.
+\newblock The MIT Press, second edition, January 2001.
+
+\bibitem[Whittaker(2008)]{JoeGMBook}
+Whittaker, Joe.
+\newblock \emph{Graphical Models in Applied Multivariate Statistics}.
+\newblock John Wiley \& Sons, Ltd, 2008.
+
+\end{thebibliography}

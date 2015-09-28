@@ -1,0 +1,27 @@
+\begin{algorithm}[H]
+\caption{\textsc{DetriangulateMoralGraph}}
+\label{algor:detriMoral}
+\textbf{Input: $\mathcal{G} = (V, E)$, Correlation $\Sigma$, threshold $\sigma$} \\
+\textbf{Output: A partially directed graph $\mathcal{G}^\prec$}\\\vspace{-4mm}
+	\begin{algorithmic}[1]
+		\FOR{each $e=(p, q)$ in $E$}
+			\STATE $C \leftarrow \left\lbrace v_i \in V \,|\, v_i\text{ and } e\text{ form a triangle}\right\rbrace$ \\
+				\FOR{colliders $\leftarrow \text{ each }k$-combination in $C$} 
+					\STATE \algorithmiccomment{$k = 1,2,\ldots,|C|$}
+					\STATE $N \leftarrow \left\lbrace v_i \in V \,|\, (v_i, p) \in E \text{ or } (v_i, q) \in E \right\rbrace$ \\
+					\STATE $\hat{N} \leftarrow \left\lbrace \text{N}\setminus \text{colliders}\right\rbrace $\\
+					\STATE $R \leftarrow$ $\Sigma_N^{-1}$
+					\STATE $S \leftarrow$ $\Sigma_{\hat{N}}^{-1}$
+					\STATE \algorithmiccomment{$\Sigma_S$ indicates the partial correlation matrix from $\Sigma$ with respect to set $S$}\\
+					\IF{$S_{pq} < \sigma$}
+						\IF{$R_{pq} > \sigma$}
+							\STATE $E \leftarrow \left\lbrace E\setminus e\right\rbrace$
+							\STATE orient $p$ and $q$ to all nodes in colliders
+							\STATE break
+						\ENDIF
+					\ENDIF		
+				\ENDFOR	
+		\ENDFOR		
+		\STATE return $\mathcal{G}^\prec \leftarrow \mathcal{G}$
+	\end{algorithmic}
+\end{algorithm}

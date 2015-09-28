@@ -1,0 +1,31 @@
+%\cite{ElidanInferenceLess} This paper focuses on efficient parameter learning for missing values given a lower-bound to log-likelihood function.
+%\cite{Elidan2011} I dont have much impression on this paper, I checked it, it is about a variation of EM algorithm, so I guess it is not that important.
+%\cite{ElidanCopula} This is the paper for the CBN framework. It proposed the most important framework, but for structure learning, they have nothing special.
+%\cite{Friedman99} This paper proposed a constraint based structure learning but it has a preconfiguration of the maximal number of parents.
+%\cite{pc_spirtes} This is the paper for the PC algorithm. 
+%\cite{heckerman95} This is a bible-like paper for BNs I guess.
+% The introduction of
+Copula Bayesian network (CBN) is a powerful tool of analysing multivariate model. The main advantage of CBNs is the high flexibility of representing
+multivariate distributions by choosing various univariate marginals, meanwhile leveraging the graphical representation of BNs.
+%introducing Copula functions in graphical model.
+Prior work \cite{ElidanCopula} has studied the basic problem of
+% the problem of
+parameter learning for CBNs. It has shown that CBNs are also elegant models dealing with a large number of missing observations \cite{ElidanInferenceLess}, where a lower bound for a log-likelihood function is proposed for efficient inference.
+%
+However, the structure learning problem in CBNs has not ever been very well studied, which is considered as the most challenging problem of learning a Bayesian network. %Such
+%approaches have already been improved to, e.g., allow for any number of parents in the final model [INSERT REF].
+In terms of structure learning in BNs, two most commonly used algorithms are: First, the PC algorithm \cite{pc_spirtes} which belongs to the category of constraint based methods \cite{Spirtes2000}. And second, scoring function based heuristic methods, especially based on the Bayesian information criterion (BIC) \cite{heckerman95}.
+The PC algorithm starts from a completely connected graph, edges are removed if the corresponding independencies are given, which usually requires a large amount of conditional independence tests. The BIC score based heuristic method generates the network structure in a greedy strategy, so the global minimum is not guaranteed. %thus the search space i exponentially large.
+%
+Other structure learning methods, such as the Sparce Candidate (SC) algorithm \cite{Friedman99}, best-first search \cite{Korf93}, all suffer from either structural inaccuracy or heavy computational effort.
+In this paper, we suggest the use of the partial inverse correlation matrix, which largely reduces the amount of conditional independence tests so that the learning is extremely fast. % than other traditional methods.
+Moreover, the estimated parameter of the Copula function (Gaussian Copula) can be 
+used further as the input for the structure learning.
+%
+% Therefore, we gain a speedup avoiding a big number of conditional
+% independence tests.
+Furthermore, even with a large amount of missing values in training data, the estimated parameters of the Copula function still result in a precise structure inference.
+%
+% is still enough for a precise inference of structure.
+% This differs impressively
+% from other structure learning algorithms where significant statistics from data is required.
